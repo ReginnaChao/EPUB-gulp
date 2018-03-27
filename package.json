@@ -1,21 +1,20 @@
 {
-  "name": "EPUB-Problems",
+  "name": "EPUB-gulp",
   "version": "0.0.0",
   "description": "",
-  "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bibliolabs/EPUB-Problems.git"
+    "url": "https://github.com/ReginnaChao/EPUB-gulp.git"
   },
-  "author": "Glenn Nelson <glenn@hexcoder.us> (http://hexcoder.us/)",
+  "author": "Reginna Chao <reginna103100@hotmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bibliolabs/EPUB-Problems/issues"
+    "url": "https://github.com/ReginnaChao/EPUB-gulp/issues"
   },
-  "homepage": "https://github.com/bibliolabs/EPUB-Problems",
+  "homepage": "https://github.com/ReginnaChao/EPUB-gulp",
   "dependencies": {
     "archiver": "^0.10.1",
     "fs-extra": "0.11.0",
