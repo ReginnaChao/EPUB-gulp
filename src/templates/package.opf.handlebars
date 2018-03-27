@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="3.0" xml:lang="en" unique-identifier="ident">
+  <metadata>
+    <!-- Metadata starts -->
+    <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/" id="ident">Published Epub</dc:identifier>
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">{{bookName}}</dc:title>
+    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">{{author}}</dc:creator>
+    <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">{{date}}</dc:date>
+    <dc:language xmlns:dc="http://purl.org/dc/elements/1.1/">{{language}}</dc:language>
+    <meta property="dcterms:modified">{{date}}</meta>
+    {{#each images}}
+    {{#if cover}}
+    <meta name="cover" content="{{this.id}}" />
+    {{/if}}
+    {{/each}}
+    <!-- Metadata ends -->
+  </metadata>
+  <manifest>
+    <!--List all files in the ePub-->
+    <item id="nav" properties="nav" href="xhtml/toc.xhtml" media-type="application/xhtml+xml"/>
+	{{#each css}}
+	<item id="{{this.id}}" href="{{this.path}}" media-type="text/css" />
+	{{/each}}
+	{{#each js}}
+	<item id="{{this.id}}" href="{{this.path}}" media-type="application/javascript" />
+	{{/each}}
+	{{#each images}}
+  <item id="{{this.id}}" href="{{this.path}}" media-type="image/png" />
+	{{/each}}
+	{{#each xhtml}}
+	<item id="{{this.id}}" href="{{this.path}}" media-type="application/xhtml+xml" />
+	{{/each}}
+  </manifest>
+  <spine>
+    <!--Reference all spine items in the ePub-->
+    <itemref idref="nav" linear="no"/>
+  	{{#each xhtml}}
+	<itemref idref="{{this.id}}" linear="yes" />
+	{{/each}}
+  </spine>
+</package>
